@@ -10,7 +10,21 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_162137) do
+ActiveRecord::Schema.define(version: 2020_08_13_183644) do
+
+  create_table "debriefs", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "route_id"
+    t.date "date"
+    t.string "time"
+    t.integer "stars"
+    t.string "difficulty"
+    t.text "experience"
+    t.text "beta"
+    t.boolean "recommend"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
 
   create_table "routes", force: :cascade do |t|
     t.string "name"

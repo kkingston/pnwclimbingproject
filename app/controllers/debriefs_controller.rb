@@ -1,0 +1,2 @@
+class DebriefsController < ApplicationController
+end

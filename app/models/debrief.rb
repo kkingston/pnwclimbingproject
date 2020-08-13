@@ -1,0 +1,2 @@
+class Debrief < ApplicationRecord
+end
