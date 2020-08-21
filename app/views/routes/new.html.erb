@@ -1,0 +1,45 @@
+<h1>New Route Form</h1>
+
+<%= form_for @route do |f| %>
+  <div>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :rating %>
+    <%= f.text_field :rating %>
+  </div>
+
+  <div>  
+    <%= label_tag :type %>
+
+    <%= radio_button_tag(:style, "sport") %>
+    <%= label_tag(:sport, "Sport") %>
+    <%= radio_button_tag(:style, "trad") %>
+    <%= label_tag(:trad, "Trad") %>
+    <%= radio_button_tag(:style, "boulder") %>
+    <%= label_tag(:boulder, "Boulder") %>
+    <%= radio_button_tag(:style, "alpine") %>
+    <%= label_tag(:alpine, "Alpine") %>
+  
+
+  <div>
+    <%= f.label :pitches %>
+    <%= f.number_field(:pitches, in: 1.0..50.0) %>
+  </div>
+
+  <div>
+    <%= f.label :location %>
+    <%= f.text_field :location %>
+  </div>
+
+  <div>
+    <%= f.label :url %>
+    <%= f.text_field :url %>
+  </div>
+
+  <div>
+    <%= f.submit :Submit %>
+  </div>
+<%end %>

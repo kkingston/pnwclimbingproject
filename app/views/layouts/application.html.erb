@@ -7,9 +7,28 @@
 
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
-  </head>
+  </head> 
 
   <body>
+    <nav>
+      <ul>
+      <!--Neutral links-->
+          <li> <%= link_to "Home", root_path %></li>
+      <!--logout links-->
+        <% unless logged_in? %>
+          <li> <%= link_to "Login", login_path %></li>
+          <li> <%= link_to "Signup", signup_path %></li>
+      <!--logged in links-->
+        <% else %>
+          <li>Welcome, <%= current_user.username %></li>
+          <li><%= link_to "My Profile", root_path %></li>
+          <li><%= link_to "Route List", root_path %></li>
+          <li><%= link_to "Route of the Day", root_path %></li>
+          <li><%= link_to "New Route", root_path %></li> 
+          <li> <%= link_to "Logout", logout_path, method: "delete"  %></li>
+        <% end %>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

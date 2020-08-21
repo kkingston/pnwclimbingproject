@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_13_183644) do
+ActiveRecord::Schema.define(version: 2020_08_21_134215) do
 
   create_table "debriefs", force: :cascade do |t|
     t.integer "user_id"
@@ -28,7 +28,7 @@ ActiveRecord::Schema.define(version: 2020_08_13_183644) do
 
   create_table "routes", force: :cascade do |t|
     t.string "name"
-    t.string "type"
+    t.string "style"
     t.string "rating"
     t.integer "stars"
     t.integer "pitches"
@@ -41,13 +41,14 @@ ActiveRecord::Schema.define(version: 2020_08_13_183644) do
 
   create_table "users", force: :cascade do |t|
     t.string "username"
-    t.string "full_name"
     t.string "email"
     t.string "password_digest"
     t.string "location"
     t.boolean "partner"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.string "uid"
+    t.string "provider"
   end
 
 end

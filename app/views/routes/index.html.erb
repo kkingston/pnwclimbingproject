@@ -1,0 +1,43 @@
+<h1>Routes Index page</h1>
+
+<h2><a href="">Go to Profile >></a></h2>
+<br>
+<br>
+
+<div>
+  <h2>Spotlight Climbs</h2>
+  <div>-----------------------------------------------------------------------------</div>
+  <% @routes.each do |route| %>
+    <div>
+      <div>Name: </div>
+      <div><%= route.name %></div>
+      <br>
+      <div>Style: </div>
+      <div><%= route.style %></div>
+      <br>
+      <div>Rating: </div>
+      <div><%= route.rating %></div>
+      <br>
+      <div>Stars: </div>
+      <div><%= route.stars %></div>
+      <br>
+      <div>Pitches: </div>
+      <div><%= route.pitches %></div>
+      <br>
+      <div>Location: </div>
+      <div><%= route.location %></div>
+      <br>
+      <div>URL: </div>
+      <div>
+        <% if route.url == nil %>
+          <%= "Not Available" %>
+        <%else %>
+          <%= route.url %>
+        <% end %>
+      </div>
+    </div>
+    <div>--------------------------------------------------------------------------</div> 
+  <% end %>
+</div>
+<br>
+<h2> <a href="">See complete list of Routes >></a></h2>
